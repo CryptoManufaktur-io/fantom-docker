@@ -563,6 +563,8 @@ printhelp() {
     echo "     executes an arbitrary docker compose command. Use \"cmd help\" to list them"
     echo "  terminate"
     echo "     stops the Fantom node and destroys all data stores"
+    echo "  prune-opera"
+    echo "     stops the Fantom Opera execution client and prunes its DB. This takes about 4-5 hours"
     echo ""
     echo ""
     echo "The logs subcommand can be appended by flags and specify the container(s). example: "
