@@ -38,6 +38,7 @@ services:
       - traefik.http.services.operaws.loadbalancer.server.port=${EL_WS_PORT}
     environment:
       - GENESIS_FILE=${GENESIS_FILE}
+      - LOG_LEVEL=${LOG_LEVEL}
     entrypoint:
       - docker-entrypoint.sh
       - opera
