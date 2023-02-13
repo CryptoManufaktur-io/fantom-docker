@@ -39,6 +39,7 @@ services:
     environment:
       - GENESIS_FILE=${GENESIS_FILE}
       - LOG_LEVEL=${LOG_LEVEL}
+      - OP_EXTRAS=${OP_EXTRAS:-}
     entrypoint:
       - docker-entrypoint.sh
       - opera
@@ -50,6 +51,8 @@ services:
       - web3,eth,net
       - --datadir
       - /var/lib/opera
+      - --db.preset
+      - ${DB_LAYOUT}
       - --port
       - ${EL_P2P_PORT}
       - --http.port
