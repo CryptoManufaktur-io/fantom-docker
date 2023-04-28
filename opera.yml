@@ -14,28 +14,28 @@ services:
       - opera-ec-data:/var/lib/opera
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - ${EL_P2P_PORT}:${EL_P2P_PORT}/tcp
-      - ${EL_P2P_PORT}:${EL_P2P_PORT}/udp
+      - ${P2P_PORT}:${P2P_PORT}/tcp
+      - ${P2P_PORT}:${P2P_PORT}/udp
     labels:
       - traefik.enable=true
       - traefik.http.routers.opera.service=opera
       - traefik.http.routers.opera.entrypoints=websecure
-      - traefik.http.routers.opera.rule=Host(`${EL_HOST}.${DOMAIN}`)
+      - traefik.http.routers.opera.rule=Host(`${RPC_HOST}.${DOMAIN}`)
       - traefik.http.routers.opera.tls.certresolver=letsencrypt
       - traefik.http.routers.operalb.service=opera
       - traefik.http.routers.operalb.entrypoints=websecure
-      - traefik.http.routers.operalb.rule=Host(`${EL_LB}.${DOMAIN}`)
+      - traefik.http.routers.operalb.rule=Host(`${RPC_LB}.${DOMAIN}`)
       - traefik.http.routers.operalb.tls.certresolver=letsencrypt
-      - traefik.http.services.opera.loadbalancer.server.port=${EL_RPC_PORT}
+      - traefik.http.services.opera.loadbalancer.server.port=${RPC_PORT}
       - traefik.http.routers.operaws.service=operaws
       - traefik.http.routers.operaws.entrypoints=websecure
-      - traefik.http.routers.operaws.rule=Host(`${EL_WS_HOST}.${DOMAIN}`)
+      - traefik.http.routers.operaws.rule=Host(`${WS_HOST}.${DOMAIN}`)
       - traefik.http.routers.operaws.tls.certresolver=letsencrypt
       - traefik.http.routers.operawslb.service=operaws
       - traefik.http.routers.operawslb.entrypoints=websecure
-      - traefik.http.routers.operawslb.rule=Host(`${EL_WS_LB}.${DOMAIN}`)
+      - traefik.http.routers.operawslb.rule=Host(`${WS_LB}.${DOMAIN}`)
       - traefik.http.routers.operawslb.tls.certresolver=letsencrypt
-      - traefik.http.services.operaws.loadbalancer.server.port=${EL_WS_PORT}
+      - traefik.http.services.operaws.loadbalancer.server.port=${WS_PORT}
     environment:
       - GENESIS_FILE=${GENESIS_FILE}
       - LOG_LEVEL=${LOG_LEVEL}
@@ -54,14 +54,14 @@ services:
       - --db.preset
       - ${DB_LAYOUT}
       - --port
-      - ${EL_P2P_PORT}
+      - ${P2P_PORT}
       - --http.port
-      - ${EL_RPC_PORT}
+      - ${RPC_PORT}
       - --ws
       - --ws.addr
       - 0.0.0.0
       - --ws.port
-      - ${EL_WS_PORT}
+      - ${WS_PORT}
       - --ws.api
       - web3,eth,net
       - --gcmode
