@@ -53,6 +53,8 @@ services:
       - /var/lib/opera
       - --db.preset
       - ${DB_LAYOUT}
+      - --syncmode
+      - ${SYNCMODE}
       - --port
       - ${P2P_PORT}
       - --http.port
