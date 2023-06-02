@@ -19,4 +19,4 @@ For a quick start, you can install prerequisites and configure fantom-docker, as
 
 # Version
 
-This is fantom-docker v1.0
+This is fantom-docker v1.1
