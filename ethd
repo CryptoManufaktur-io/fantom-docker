@@ -517,10 +517,10 @@ prune-opera() {
         exit 1
     fi
 
-    rpc_line=$(grep '^EL_RPC_PORT=' "${ENV_FILE}")
-    regex='^EL_RPC_PORT=([0-9]+)'
+    rpc_line=$(grep '^RPC_PORT=' "${ENV_FILE}")
+    regex='^RPC_PORT=([0-9]+)'
     if [[ ! "${rpc_line}" =~ ${regex} ]]; then
-        echo "Unable to determine EL_RPC_PORT, aborting."
+        echo "Unable to determine RPC_PORT, aborting."
         exit 1
     else
         rpc_port="${BASH_REMATCH[1]}"
