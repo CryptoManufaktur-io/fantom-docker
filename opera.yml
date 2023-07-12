@@ -36,6 +36,9 @@ services:
       - traefik.http.routers.operawslb.rule=Host(`${WS_LB}.${DOMAIN}`)
       - traefik.http.routers.operawslb.tls.certresolver=letsencrypt
       - traefik.http.services.operaws.loadbalancer.server.port=${WS_PORT}
+      - metrics.scrape=true
+      - metrics.path=/metrics
+      - metrics.port=6060
     environment:
       - GENESIS_FILE=${GENESIS_FILE}
       - LOG_LEVEL=${LOG_LEVEL}
@@ -66,6 +69,10 @@ services:
       - ${WS_PORT}
       - --ws.api
       - web3,eth,net
+      - --metrics
+      - --metrics.expensive
+      - --metrics.addr
+      - 0.0.0.0
       - --gcmode
       - light
       - --cache
