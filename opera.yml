@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   opera:
     restart: "unless-stopped"
@@ -10,6 +9,7 @@ services:
         - DOCKER_TAG=${OPERA_DOCKER_TAG}
     stop_grace_period: 3m
     image: opera:local
+    pull_policy: build
     volumes:
       - opera-ec-data:/var/lib/opera
       - /etc/localtime:/etc/localtime:ro
