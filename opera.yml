@@ -39,6 +39,7 @@ services:
       - metrics.scrape=true
       - metrics.path=/debug/metrics/prometheus
       - metrics.port=6060
+      - metrics.network=fantom
     environment:
       - GENESIS_FILE=${GENESIS_FILE}
       - LOG_LEVEL=${LOG_LEVEL}
