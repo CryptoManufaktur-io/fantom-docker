@@ -1,16 +1,16 @@
-# fantom-docker: Docker automation for Fantom RPC nodes
+# Fantom Docker: Docker automation for Fantom RPC nodes
 
 ## Overview
 
-fantom-docker follows [eth-docker](https://eth-docker.net) conventions. A lot of the same basic patterns,
+Fantom Docker follows [Eth Docker](https://ethdocker.com) conventions. A lot of the same basic patterns,
 such as for traefik access, apply.
 
 ## Getting Started
 
-For a quick start, you can install prerequisites and configure fantom-docker, as a non-root user:
+For a quick start, you can install prerequisites and configure Fantom Docker, as a non-root user:
 
 * `cd ~ && git clone https://github.com/CryptoManufaktur-io/fantom-docker.git && cd fantom-docker`
-* `./ethd install`
+* `./fantomd install`
 * `cp default.env .env` and adjust genesis file location.
 
 ## License
@@ -19,4 +19,4 @@ For a quick start, you can install prerequisites and configure fantom-docker, as
 
 # Version
 
-This is fantom-docker v1.1
+This is Fantom Docker v1.2

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-__project_name="fantom-docker"
+__project_name="Fantom Docker"
 __app_name="Fantom node"
 __sample_service="opera"
 __docker_exe="docker"
