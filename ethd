@@ -731,6 +731,8 @@ help() {
     echo "     executes an arbitrary Docker Compose command. Use \"cmd help\" to list them"
     echo "  terminate"
     echo "     stops the ${__app_name} and destroys all data stores"
+    echo "  prune-opera"
+    echo "     stops Opera and offline prunes the database"
     echo "  help"
     echo "      print this help screen"
     echo
